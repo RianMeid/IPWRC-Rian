@@ -1,0 +1,151 @@
+<ul class="nav nav-tabs ">
+
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#home"><i class="material-icons">computer</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" routerLink="/cart"><i class="material-icons">shopping_cart</i> {{countx}}</a>
+  </li>
+  <li class="nav-item">
+    <button type="button"  class="btn btn-primary" routerLink="/loginreg/login">Login</button>
+
+  </li>
+  <li class="nav-item">
+    <button type="button" class="btn btn-primary" routerLink="/loginreg/register">Register</button>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" >{{login}}</a>
+  </li>
+
+
+
+
+</ul>
+<div class="sidebar">
+  <ul>
+    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">All items</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">Graphics cards</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">Motherboards</a></li>
+    <li class="list-group-item d-flex justify-content-between align-items-center"><a href="#">Memory</a></li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://images.nvidia.com/pascal/img/gtx1080/GeForce_GTX_1080_3qtr_Front_Left.png" alt="1080"/>
+        <h4 class="card-title">GTX 1080</h4>
+        <p class="card-text">699 euro's</p>
+        <button (click)="increase1080()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5330/5330700_sd.jpg;maxHeight=640;maxWidth=550" alt="1070"/>
+        <h4 class="card-title">1070</h4>
+        <p class="card-text">499 euro's</p>
+        <button (click)="increase1070()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://static.gigabyte.com/Product/2/5732/20151230104925_m.png" alt="motherboard"/>
+        <h4 class="card-title">Gigabyte GA-X150M-PRO ECC - 1.0</h4>
+        <p class="card-text">80 euro's</p>
+        <button (click)="increasex150()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://static.gigabyte.com/Product/2/5812/20160531161539_big.png" alt="motherboard"/>
+        <h4 class="card-title">Gigabyte GA-X99-Designare EX - 1.0</h4>
+        <p class="card-text">480 euro</p>
+        <button (click)="increasex99()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://cdn.pcpartpicker.com/static/forever/images/product/06c53b89fb69aeb8c0b9942e6661c3ba.256p.jpg" alt="1080"/>
+        <h4 class="card-title">G.Skill Ripjaws - DDR4</h4>
+        <p class="card-text">230 euro</p>
+        <button (click)="increaseripjaws()"type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+  <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+    <div class="card-body text-secondary">
+      <img style="height: 200px; width: 100%; display: block;" src="https://d9qiof14roash.cloudfront.net/tmp/img_cache/img.scale.listerRodklx.16197_839930-3ab42b42.jpg" alt="1080"/>
+      <h4 class="card-title">Corsair Vengeance LPX - DDR4</h4>
+      <p class="card-text">210 euro</p>
+      <button (click)="increasevengeance()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+
+    </div>
+  </div>
+</div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://images-na.ssl-images-amazon.com/images/I/81qC%2Byd2gDL._SL1500_.jpg" alt="1080"/>
+        <h4 class="card-title">HDD 1TB</h4>
+        <p class="card-text">60 euro</p>
+        <button (click)="increasehdd()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://www.bhphotovideo.com/images/images2000x2000/wd_wds500g1b0a_00h9h0_500gb_blue_sata_iii_1287117.jpg" alt="1080"/>
+        <h4 class="card-title">SDD 500gb</h4>
+        <p class="card-text">120 euro</p>
+        <button (click)="increasessd()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://images-na.ssl-images-amazon.com/images/I/41HNe5D3SVL._SL500_AC_SS350_.jpg" alt="1080"/>
+        <h4 class="card-title">Razer keyboard</h4>
+        <p class="card-text">200 euro</p>
+        <button (click)="increasekeyboard()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card border-secondary mb-3" style="max-width: 20rem;">
+
+      <div class="card-body text-secondary">
+        <img style="height: 200px; width: 100%; display: block;" src="https://d1urewwzb2qwii.cloudfront.net/sys-master/images/h5b/h87/8859142717470/Abyssus-V2-Base.png_300Wx300H" alt="1080"/>
+        <h4 class="card-title">Razer Mouse</h4>
+        <p class="card-text">150 euro</p>
+        <button (click)="increasemouse()" type="button" class="btn btn-primary btn-lg btn-block">Purchase</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>

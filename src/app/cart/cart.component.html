@@ -1,0 +1,42 @@
+<ul class="nav nav-tabs ">
+
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#home"><i class="material-icons">computer</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" routerLink="/cart"><i class="material-icons">shopping_cart</i> {{countx}}</a>
+  </li>
+  <li class="nav-item">
+    <button type="button"  class="btn btn-primary" routerLink="/loginreg/login">Login</button>
+
+  </li>
+  <li class="nav-item">
+    <button type="button" class="btn btn-primary" routerLink="/loginreg/register">Register</button>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" >{{login}}</a>
+  </li>
+
+
+
+</ul>
+<div class="card border-light mb-3">
+  <div class="card-header">Your cart</div>
+  <div class="card-body">
+    <p class="card-text">Gtx 1080 purchased<button (click)="decrease1080()" type="button" class="btn btn-secondary btn-sm">-</button> {{total1080}} <button (click)="increase1080()" type="button" class="btn btn-secondary btn-sm">+</button> price = €{{price1080}}</p>
+    <p class="card-text">Gtx 1070 purchased<button (click)="decrease1070()" type="button" class="btn btn-secondary btn-sm">-</button> {{total1070}} <button (click)="increase1070()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{price1070}}</p>
+    <p class="card-text">Gigabyte GA-X150M-PRO ECC - 1.0 purchased<button (click)="decreasex150()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalx150}} <button (click)="increasex150()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricex150}}</p>
+    <p class="card-text">Gigabyte GA-X99-Designare EX - 1.0 purchased<button (click)="decreasex99()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalx99}} <button (click)="increasex99()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricex99}}</p>
+    <p class="card-text">G.Skill Ripjaws - DDR4 purchased<button (click)="decreaseripjaws()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalripjaws}} <button (click)="increaseripjaws()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{priceripjaws}}</p>
+    <p class="card-text">Corsair Vengeance LPX - DDR4 purchased<button (click)="decreasevengeance()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalvengeance}} <button (click)="increasevengeance()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricevengeance}}</p>
+    <p class="card-text">HDD 1TB purchased<button (click)="decreasehdd()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalhdd}} <button (click)="increasehdd()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricehdd}}</p>
+    <p class="card-text">SSD 500GB purchased<button (click)="decreasessd()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalssd}} <button (click)="increasessd()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricessd}}</p>
+    <p class="card-text">Razer keyboard mouse purchased<button (click)="decreasekeyboard()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalkeyboard}} <button (click)="increasekeyboard()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricekeyboard}}</p>
+    <p class="card-text">Razer Mouse purchased<button (click)="decreasemouse()" type="button" class="btn btn-secondary btn-sm">-</button> {{totalmouse}} <button (click)="increasemouse()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{pricemouse}}</p>
+    <h3 class="card-title">Your total price = €{{totalprice}} </h3>
+    <button type="button"  (click)="submitpurchase()" class="btn btn-secondary">Comfirm purchase</button>
+
+  </div>
+</div>
+

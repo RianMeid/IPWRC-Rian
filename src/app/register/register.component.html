@@ -1,0 +1,49 @@
+<ul class="nav nav-tabs ">
+
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" href="#home"><i class="material-icons">computer</i></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" routerLink="/cart"><i class="material-icons">shopping_cart</i> {{countx}}</a>
+  </li>
+  <li class="nav-item">
+    <button type="button"  class="btn btn-primary" routerLink="/loginreg/login">Login</button>
+
+  </li>
+  <li class="nav-item">
+    <button type="button" class="btn btn-primary" routerLink="/loginreg/register">Register</button>
+
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" data-toggle="tab" >{{login}}</a>
+  </li>
+
+
+
+</ul>
+
+<div class="card border-light mb-3">
+  <div class="card-header">Register</div>
+  <div class="card-body">
+    <form #Klantform = 'ngForm'
+          (ngSubmit) = 'submit(Klantform.value)'>
+      <fieldset>
+
+        <div class="form-group">
+          <label for="exampleInputEmail1">RegisterEmail address</label>
+          <input name="exampleInputEmail1" ngModel name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <div class="form-group">
+          <input name="exampleInputNaam" ngmodel type="password" ngModel name="password"  class="form-control" id="exampleInputNaam"   placeholder="Enter Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+      </fieldset>
+    </form>
+  </div>
+</div>
+
+
+
