@@ -9,9 +9,17 @@ export class AllitemsComponent implements OnInit {
   countx: string;
   total1080: string;
   login: string;
+  showgraphics: boolean;
+  showmotherboard: boolean;
+  showmemory: boolean;
+  showaccesory: boolean;
   constructor() {
     this.countx = localStorage.getItem('total');
     this.login = localStorage.getItem('login');
+    this.showgraphics = true;
+    this.showmemory = true;
+    this.showmotherboard = true;
+    this.showaccesory = true;
   }
 
   ngOnInit() {
@@ -39,7 +47,7 @@ export class AllitemsComponent implements OnInit {
     this.add('hdd');
   }
   increasesdd() {
-    this.add('sdd');
+    this.add('ssd');
   }
   increasekeyboard() {
     this.add('keyboard');
@@ -57,4 +65,37 @@ export class AllitemsComponent implements OnInit {
     localStorage.setItem(name, String(countitem));
     console.log(localStorage.getItem( name));
   }
+
+  filtergraphics() {
+    this.showgraphics = true;
+    this.showmemory = false;
+    this.showmotherboard = false;
+    this.showaccesory = false;
+  }
+  filtermotherboard() {
+    this.showgraphics = false;
+    this.showmemory = false;
+    this.showmotherboard = true;
+    this.showaccesory = false;
+  }
+  filtermemory() {
+    this.showgraphics = false;
+    this.showmemory = true;
+    this.showmotherboard = false;
+    this.showaccesory = false;
+  }
+  filteraccessories() {
+    this.showgraphics = false;
+    this.showmemory = false;
+    this.showmotherboard = false;
+    this.showaccesory = true;
+  }
+  filterallitems() {
+    this.showgraphics = true;
+    this.showmemory = true;
+    this.showmotherboard = true;
+    this.showaccesory = true;
+  }
+   logout() {
+    localStorage.clear(); }
 }

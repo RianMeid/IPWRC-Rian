@@ -9,6 +9,7 @@ import {Http} from "@angular/http";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
+  showerror: boolean;
   countx: string;
   total1080: string;
   total1070: string;
@@ -34,6 +35,7 @@ export class CartComponent implements OnInit {
   login: string;
 
   constructor(private http: Http) {
+    this.showerror = false;
     this.login = localStorage.getItem('login');
     this.countx = localStorage.getItem('total');
     this.total1080 = localStorage.getItem('1080');
@@ -262,13 +264,16 @@ export class CartComponent implements OnInit {
   }
   minus(name: string) {
     let counttotal;
-    counttotal = Number(localStorage.getItem('total')) - 1;
-    localStorage.setItem('total', String(counttotal));
-    this.countx = localStorage.getItem('total');
-    let countitem;
-    countitem = Number(localStorage.getItem(name)) - 1;
-    localStorage.setItem(name, String(countitem));
-    console.log(localStorage.getItem( name));
+    if ((Number(localStorage.getItem('total')) - 1) >= 0) {
+      counttotal = Number(localStorage.getItem('total')) - 1;
+      localStorage.setItem('total', String(counttotal));
+      this.countx = localStorage.getItem('total');
+      let countitem;
+      countitem = Number(localStorage.getItem(name)) - 1;
+      localStorage.setItem(name, String(countitem));
+      console.log(localStorage.getItem( name));
+    }
+
   }
   updateprice() {
     let countprice;
@@ -283,7 +288,12 @@ export class CartComponent implements OnInit {
   }
 
   submitpurchase()  {
-    const allpurchase = new AllPurchasesComponent(localStorage.getItem('1080'),
+    console.log(localStorage.getItem('login'));
+    if (localStorage.getItem('login') === null) {
+      this.showerror = true;
+
+    }else {
+      const allpurchase = new AllPurchasesComponent(localStorage.getItem('1080'),
       localStorage.getItem('1070'),
       localStorage.getItem('x150'),
       localStorage.getItem('x99'),
@@ -295,24 +305,25 @@ export class CartComponent implements OnInit {
       localStorage.getItem('mouse'),
       localStorage.getItem('login'),
       localStorage.getItem('password')
-      );
-    const headers = new Headers(
-      {
-        'Authorization': 'Basic Zmlyc3RAdXNlci5jb206Zmlyc3Q=',
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : '*'
-      });
-
-    const response = this.http.post('http://84.86.87.214:4201/api/CartService/Purchase' , JSON.parse(JSON.stringify(allpurchase)
-    ) , headers ).subscribe(
-      res => {
-        console.log(res);
-      },
-      err => {
-        console.log('Error occured');
-      }
     );
-    console.log(allpurchase);
+      const headers = new Headers(
+        {
+          'Authorization': 'Basic Zmlyc3RAdXNlci5jb206Zmlyc3Q=',
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin' : '*'
+        });
+
+      const response = this.http.post('http://84.86.87.214:4202/api/CartService/Purchase' , JSON.parse(JSON.stringify(allpurchase)
+      ) , headers ).subscribe(
+        res => {
+          console.log(res);
+        },
+        err => {
+          console.log('Error occured');
+        }
+      );
+      console.log(allpurchase);}
+
   }
 
 }

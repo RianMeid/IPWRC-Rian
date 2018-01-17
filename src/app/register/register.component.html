@@ -42,6 +42,18 @@
 
       </fieldset>
     </form>
+
+    <div *ngIf="show">
+      <div  class="alert alert-dismissible alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <strong>Well done!</strong> You successfully registerd an account. Dont forget to login!
+      </div>
+    </div>
+    <div *ngIf="showerror" class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong>Oh snap!</strong> Something went wrong. There might already be a user with that email.
+    </div>
+
   </div>
 </div>
 

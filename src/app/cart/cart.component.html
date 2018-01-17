@@ -22,7 +22,7 @@
 
 </ul>
 <div class="card border-light mb-3">
-  <div class="card-header">Your cart</div>
+  <div class="card-header"><h2>Your cart</h2></div>
   <div class="card-body">
     <p class="card-text">Gtx 1080 purchased<button (click)="decrease1080()" type="button" class="btn btn-secondary btn-sm">-</button> {{total1080}} <button (click)="increase1080()" type="button" class="btn btn-secondary btn-sm">+</button> price = €{{price1080}}</p>
     <p class="card-text">Gtx 1070 purchased<button (click)="decrease1070()" type="button" class="btn btn-secondary btn-sm">-</button> {{total1070}} <button (click)="increase1070()" type="button" class="btn btn-secondary btn-sm">+</button>price = €{{price1070}}</p>
@@ -38,5 +38,9 @@
     <button type="button"  (click)="submitpurchase()" class="btn btn-secondary">Comfirm purchase</button>
 
   </div>
+</div>
+<div *ngIf="showerror" class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">&times;</button>
+  <strong>Oh snap!</strong> Something went wrong. Looks like you're not logged in!
 </div>
 

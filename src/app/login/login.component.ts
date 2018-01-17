@@ -16,12 +16,17 @@ import { HttpModule } from '@angular/http';
 @Injectable()
 export class LoginComponent implements OnInit {
   login: string;
+  show: boolean;
+  showerror: boolean;
   constructor(private http: Http) {
     this.login = localStorage.getItem('login');
+    this.show = false;
+    this.showerror = false;
   }
   ngOnInit() {
   }
   submit = function (klant) {
+
 
 
 
@@ -35,18 +40,23 @@ export class LoginComponent implements OnInit {
           'Access-Control-Allow-Origin' : '*'
         });
 
-      const response = this.http.post('http://84.86.87.214:4201/api/LoginService/Login' , JSON.parse(JSON.stringify(klant)
+      const response = this.http.post('http://84.86.87.214:4202/api/LoginService/Login' , JSON.parse(JSON.stringify(klant)
       ) , headers ).subscribe(
         res => {
-          if (res.json()["isadmin"] === true) {
+          if (res.json()["loggedin"] === true) {
             this.login = klant['email'];
             localStorage.setItem('login', klant["email"])
             localStorage.setItem('password', klant["password"]);
+            this.show = true;
           }
           console.log(res);
+          if (res.json()["loggedin"] === null) {
+            this.showerror = true;
+          }
         },
         err => {
           console.log('Error occured');
+          this.showerror = true;
         }
     );
 
